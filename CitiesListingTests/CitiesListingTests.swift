@@ -21,9 +21,11 @@ class CitiesListingTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testJsonParsing() {
+        let ctvc = CitiesTableViewController()
+        let jsonString = "[{\"country\": \"BR\",\"name\": \"Chapeco\",\"_id\": 1,\"coord\": {\"lon\": -52.6119352,\"lat\": -27.0971662}}, {\"country\": \"BR\",\"name\": \"Florianopolis\",\"_id\": 02,\"coord\": {\"lon\": -27.5987633,\"lat\": -48.5604456}}]"
+        let result = ctvc.getCities(from: jsonString)
+        assert(result.count == 2, "Get cities did not return the expected number of cities")
     }
     
     func testPerformanceExample() {
