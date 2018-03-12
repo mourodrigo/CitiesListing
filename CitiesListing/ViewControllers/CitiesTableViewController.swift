@@ -31,8 +31,12 @@ class CitiesTableViewController: UITableViewController {
     
     func getCities(from jsonString:String) -> Array<City> {
         if let data: Data = jsonString.data(using: String.Encoding.utf8) as Data? {
-            let jsonObject = try! JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.allowFragments)
-            return self.parseJson(anyObj: jsonObject)
+            do {
+                let jsonObject = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.allowFragments)
+                return self.parseJson(anyObj: jsonObject)
+            } catch {
+                print("json error: \(error.localizedDescription)")
+            }
         }
         return Array<City>()
     }
