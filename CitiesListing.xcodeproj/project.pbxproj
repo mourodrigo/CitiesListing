@@ -14,6 +14,7 @@
 		587C8A152056D5A70079A76A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 587C8A132056D5A70079A76A /* LaunchScreen.storyboard */; };
 		587C8A202056D5A70079A76A /* CitiesListingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587C8A1F2056D5A70079A76A /* CitiesListingTests.swift */; };
 		587C8A2B2056D5F60079A76A /* CitiesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587C8A2A2056D5F60079A76A /* CitiesData.swift */; };
+		587C8A2E2056D7AE0079A76A /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587C8A2D2056D7AE0079A76A /* City.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		587C8A1F2056D5A70079A76A /* CitiesListingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesListingTests.swift; sourceTree = "<group>"; };
 		587C8A212056D5A70079A76A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		587C8A2A2056D5F60079A76A /* CitiesData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesData.swift; sourceTree = "<group>"; };
+		587C8A2D2056D7AE0079A76A /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,11 +82,11 @@
 			isa = PBXGroup;
 			children = (
 				587C8A0A2056D5A70079A76A /* AppDelegate.swift */,
-				587C8A0C2056D5A70079A76A /* ViewController.swift */,
-				587C8A2A2056D5F60079A76A /* CitiesData.swift */,
-				587C8A0E2056D5A70079A76A /* Main.storyboard */,
+				587C8A302056D7CD0079A76A /* Storyboard */,
+				587C8A2F2056D7B90079A76A /* ViewControllers */,
+				587C8A2C2056D79D0079A76A /* Models */,
+				587C8A312056D80B0079A76A /* Content */,
 				587C8A112056D5A70079A76A /* Assets.xcassets */,
-				587C8A132056D5A70079A76A /* LaunchScreen.storyboard */,
 				587C8A162056D5A70079A76A /* Info.plist */,
 			);
 			path = CitiesListing;
@@ -97,6 +99,39 @@
 				587C8A212056D5A70079A76A /* Info.plist */,
 			);
 			path = CitiesListingTests;
+			sourceTree = "<group>";
+		};
+		587C8A2C2056D79D0079A76A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				587C8A2D2056D7AE0079A76A /* City.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		587C8A2F2056D7B90079A76A /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				587C8A0C2056D5A70079A76A /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		587C8A302056D7CD0079A76A /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				587C8A132056D5A70079A76A /* LaunchScreen.storyboard */,
+				587C8A0E2056D5A70079A76A /* Main.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		587C8A312056D80B0079A76A /* Content */ = {
+			isa = PBXGroup;
+			children = (
+				587C8A2A2056D5F60079A76A /* CitiesData.swift */,
+			);
+			path = Content;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,6 +239,7 @@
 			files = (
 				587C8A0D2056D5A70079A76A /* ViewController.swift in Sources */,
 				587C8A0B2056D5A70079A76A /* AppDelegate.swift in Sources */,
+				587C8A2E2056D7AE0079A76A /* City.swift in Sources */,
 				587C8A2B2056D5F60079A76A /* CitiesData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
