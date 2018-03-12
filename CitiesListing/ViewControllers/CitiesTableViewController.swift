@@ -8,10 +8,13 @@
 
 import UIKit
 
-class CitiesTableViewController: UITableViewController {
+class CitiesTableViewController: UITableViewController, UISearchBarDelegate {
 
-    var allCities = [City]()
+    @IBOutlet var searchBar: UISearchBar!
     
+    var allCities = [City]()
+    var filteredCities = [City]()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         loadAllCities()
@@ -26,6 +29,7 @@ class CitiesTableViewController: UITableViewController {
     func loadAllCities() {
         // this structure provides the possibility to continuously add cities from more json files, for instance from a paginated API
         allCities.removeAll()
+        filteredCities.removeAll()
         allCities.append(contentsOf: getCities(from: CitiesData.contentString))
     }
     
@@ -59,7 +63,7 @@ class CitiesTableViewController: UITableViewController {
     }
 
     func dataSource() -> Array<City> {
-        return allCities
+        return searchBar.text == "" ? allCities : filteredCities
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -79,6 +83,13 @@ class CitiesTableViewController: UITableViewController {
         cell.detailTextLabel?.text = city.country
 
         return cell
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        filteredCities = allCities.filter({ (city) -> Bool in
+            city.name.lowercased().contains(searchText.lowercased())
+        })
+        self.tableView.reloadData()
     }
 
     /*
