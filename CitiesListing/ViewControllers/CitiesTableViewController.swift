@@ -31,6 +31,15 @@ class CitiesTableViewController: UITableViewController, UISearchBarDelegate {
         allCities.removeAll()
         filteredCities.removeAll()
         allCities.append(contentsOf: getCities(from: CitiesData.contentString))
+        allCities.sort { (a, b) -> Bool in
+            if a.name < b.name {
+                return true
+            } else if a.name > b.name {
+                return false
+            } else {
+                return a.country < b.country
+            }
+        }
     }
     
     func getCities(from jsonString:String) -> Array<City> {
@@ -86,10 +95,14 @@ class CitiesTableViewController: UITableViewController, UISearchBarDelegate {
     }
     
     func applySearch(with text:String) {
-        filteredCities = allCities.filter({ (city) -> Bool in
-            city.name.lowercased().contains(text.lowercased())
-        })
-        self.tableView.reloadData()
+        DispatchQueue.global().async {
+            self.filteredCities = self.allCities.filter({ (city) -> Bool in
+                city.name.lowercased().contains(text.lowercased())
+            })
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
     }
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
