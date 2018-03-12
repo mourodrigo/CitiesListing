@@ -85,11 +85,15 @@ class CitiesTableViewController: UITableViewController, UISearchBarDelegate {
         return cell
     }
     
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+    func applySearch(with text:String) {
         filteredCities = allCities.filter({ (city) -> Bool in
-            city.name.lowercased().contains(searchText.lowercased())
+            city.name.lowercased().contains(text.lowercased())
         })
         self.tableView.reloadData()
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        applySearch(with: searchText)
     }
 
     /*
