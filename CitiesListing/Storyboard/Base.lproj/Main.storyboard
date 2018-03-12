@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -44,6 +45,7 @@
                     <navigationItem key="navigationItem" title="Cities Listing" id="c6w-7S-qVq"/>
                     <connections>
                         <outlet property="searchBar" destination="VHa-7c-6yP" id="DmU-eE-8ii"/>
+                        <segue destination="H8A-Ab-2l4" kind="show" identifier="ShowMapViewController" id="DAl-42-XFC"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Soq-LY-zNK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -65,6 +67,42 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="odk-EJ-roh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-62" y="116"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="UcR-sr-nN1">
+            <objects>
+                <viewController storyboardIdentifier="MapViewController" id="H8A-Ab-2l4" customClass="MapViewController" customModule="CitiesListing" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="v9L-lc-Ugo"/>
+                        <viewControllerLayoutGuide type="bottom" id="ozx-Pe-1Qh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pj7-5I-hKq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Uye-pq-tm4">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <connections>
+                                    <outlet property="delegate" destination="H8A-Ab-2l4" id="gfa-9v-xJS"/>
+                                </connections>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Uye-pq-tm4" secondAttribute="trailing" id="H6a-zz-ugJ"/>
+                            <constraint firstItem="Uye-pq-tm4" firstAttribute="top" secondItem="pj7-5I-hKq" secondAttribute="top" id="PPR-TI-NLu"/>
+                            <constraint firstItem="Uye-pq-tm4" firstAttribute="leading" secondItem="pj7-5I-hKq" secondAttribute="leading" id="RRU-yp-OPw"/>
+                            <constraint firstItem="ozx-Pe-1Qh" firstAttribute="top" secondItem="Uye-pq-tm4" secondAttribute="bottom" id="yVi-pV-DIY"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="1fe-L6-r1r"/>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="Uye-pq-tm4" id="UwD-c3-OU8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pQr-Xp-Sv5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1646" y="116"/>
         </scene>
     </scenes>
 </document>

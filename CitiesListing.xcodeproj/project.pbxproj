@@ -15,6 +15,7 @@
 		587C8A2B2056D5F60079A76A /* CitiesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587C8A2A2056D5F60079A76A /* CitiesData.swift */; };
 		587C8A2E2056D7AE0079A76A /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587C8A2D2056D7AE0079A76A /* City.swift */; };
 		587C8A332056DA950079A76A /* CitiesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587C8A322056DA950079A76A /* CitiesTableViewController.swift */; };
+		587C8A352057214E0079A76A /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587C8A342057214D0079A76A /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		587C8A2A2056D5F60079A76A /* CitiesData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesData.swift; sourceTree = "<group>"; };
 		587C8A2D2056D7AE0079A76A /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		587C8A322056DA950079A76A /* CitiesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesTableViewController.swift; sourceTree = "<group>"; };
+		587C8A342057214D0079A76A /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				587C8A322056DA950079A76A /* CitiesTableViewController.swift */,
+				587C8A342057214D0079A76A /* MapViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -240,6 +243,7 @@
 				587C8A332056DA950079A76A /* CitiesTableViewController.swift in Sources */,
 				587C8A0B2056D5A70079A76A /* AppDelegate.swift in Sources */,
 				587C8A2E2056D7AE0079A76A /* City.swift in Sources */,
+				587C8A352057214E0079A76A /* MapViewController.swift in Sources */,
 				587C8A2B2056D5F60079A76A /* CitiesData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

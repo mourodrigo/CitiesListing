@@ -108,15 +108,22 @@ class CitiesTableViewController: UITableViewController, UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         applySearch(with: searchText)
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let city = dataSource()[indexPath.row]
+        self.performSegue(withIdentifier: "ShowMapViewController", sender: city)
+        self.tableView(tableView, didDeselectRowAt: indexPath)
     }
-    */
+
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowMapViewController",
+            let mapViewController = segue.destination as? MapViewController,
+            let city = sender as? City {
+            mapViewController.latitude = city.latitude
+            mapViewController.longitude = city.longitude
+            mapViewController.navigationItem.title = city.name + " - " + city.country
+        }
+    }
 
 }
