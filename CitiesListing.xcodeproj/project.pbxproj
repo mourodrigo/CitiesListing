@@ -13,6 +13,7 @@
 		587C8A122056D5A70079A76A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 587C8A112056D5A70079A76A /* Assets.xcassets */; };
 		587C8A152056D5A70079A76A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 587C8A132056D5A70079A76A /* LaunchScreen.storyboard */; };
 		587C8A202056D5A70079A76A /* CitiesListingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587C8A1F2056D5A70079A76A /* CitiesListingTests.swift */; };
+		587C8A2B2056D5F60079A76A /* CitiesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587C8A2A2056D5F60079A76A /* CitiesData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		587C8A1B2056D5A70079A76A /* CitiesListingTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CitiesListingTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		587C8A1F2056D5A70079A76A /* CitiesListingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesListingTests.swift; sourceTree = "<group>"; };
 		587C8A212056D5A70079A76A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		587C8A2A2056D5F60079A76A /* CitiesData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 			children = (
 				587C8A0A2056D5A70079A76A /* AppDelegate.swift */,
 				587C8A0C2056D5A70079A76A /* ViewController.swift */,
+				587C8A2A2056D5F60079A76A /* CitiesData.swift */,
 				587C8A0E2056D5A70079A76A /* Main.storyboard */,
 				587C8A112056D5A70079A76A /* Assets.xcassets */,
 				587C8A132056D5A70079A76A /* LaunchScreen.storyboard */,
@@ -201,6 +204,7 @@
 			files = (
 				587C8A0D2056D5A70079A76A /* ViewController.swift in Sources */,
 				587C8A0B2056D5A70079A76A /* AppDelegate.swift in Sources */,
+				587C8A2B2056D5F60079A76A /* CitiesData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
