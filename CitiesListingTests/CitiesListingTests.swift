@@ -84,6 +84,8 @@ class CitiesListingTests: XCTestCase {
 
         ctvc.allCities = ctvc.getCities(from: jsonTestString)
         
+        // tableview datasource fetching and reloading occurs asynchronously for preventing UX freezing,
+        // so i'm waiting for the results to be shown on tableview giving a maximum time for the results to be presented
         let maxAllowedTimeForFinishSearching = UInt32(1)
 
         self.setSearchString(searchText: "A", on: ctvc)
