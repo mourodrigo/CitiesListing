@@ -56,7 +56,7 @@ class CitiesListingTests: XCTestCase {
     }
     
     func testSourceCountWithSampleData() {
-        let ctvc = CitiesTableViewController()
+        let ctvc = citiesViewControllerInstance()
         self.measure {
             ctvc.loadAllCities()
         }
@@ -83,26 +83,35 @@ class CitiesListingTests: XCTestCase {
         let jsonTestString = "[{\"country\": \"US\",\"name\": \"Alabama\",\"_id\": 1,\"coord\": {\"lon\": -86.8327625,\"lat\": 33.3676976}},{\"country\": \"US\",\"name\": \"Albuquerque\",\"_id\": 2,\"coord\": {\"lon\": -106.7164848,\"lat\": 35.0906166}},{\"country\": \"US\",\"name\": \"Anaheim\",\"_id\": 3,\"coord\": {\"lon\": 33.8361808,\"lat\": -117.9068632}},{\"country\": \"US\",\"name\": \"Arizona\",\"_id\": 4,\"coord\": {\"lon\": 33.6056695,\"lat\": -112.4059225}},{\"country\": \"US\",\"name\": \"Sydney\",\"_id\": 5,\"coord\": {\"lon\": 151.0514922,\"lat\": -33.9020268}}]"
 
         ctvc.allCities = ctvc.getCities(from: jsonTestString)
+        
+        let maxAllowedTimeForFinishSearching = UInt32(1)
 
-        setSearchString(searchText: "A", on: ctvc)
+        self.setSearchString(searchText: "A", on: ctvc)
+        sleep(maxAllowedTimeForFinishSearching)
         assert(ctvc.tableView(ctvc.tableView, numberOfRowsInSection: 0) == 4, "All rows but Sidney should appear")
         
         setSearchString(searchText: "s", on: ctvc)
+        sleep(maxAllowedTimeForFinishSearching)
         assert(ctvc.tableView(ctvc.tableView, numberOfRowsInSection: 0) == 1, "Only Sydney should appear")
 
         setSearchString(searchText: "Al", on: ctvc)
+        sleep(maxAllowedTimeForFinishSearching)
         assert(ctvc.tableView(ctvc.tableView, numberOfRowsInSection: 0) == 2, "Alabama, US and Albuquerque, US should appear")
 
         setSearchString(searchText: "Alb", on: ctvc)
+        sleep(maxAllowedTimeForFinishSearching)
         assert(ctvc.tableView(ctvc.tableView, numberOfRowsInSection: 0) == 1, "Albuquerque only should appear")
 
         setSearchString(searchText: "", on: ctvc)
+        sleep(maxAllowedTimeForFinishSearching)
         assert(ctvc.tableView(ctvc.tableView, numberOfRowsInSection: 0) == 5, "All results should appear")
 
         setSearchString(searchText: "nothing here", on: ctvc)
+        sleep(maxAllowedTimeForFinishSearching)
         assert(ctvc.tableView(ctvc.tableView, numberOfRowsInSection: 0) == 0, "No results should be found")
         
         setSearchString(searchText: "!Q[3['',//.0-21^%]324]2%$*&", on: ctvc)
+        sleep(maxAllowedTimeForFinishSearching)
         assert(ctvc.tableView(ctvc.tableView, numberOfRowsInSection: 0) == 0, "No results should be found")
 
     }
