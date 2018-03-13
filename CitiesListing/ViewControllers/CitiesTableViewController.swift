@@ -111,8 +111,8 @@ class CitiesTableViewController: UITableViewController, UISearchBarDelegate {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let city = dataSource()[indexPath.row]
+        self.tableView.deselectRow(at: indexPath, animated: true)
         self.performSegue(withIdentifier: "ShowMapViewController", sender: city)
-        self.tableView(tableView, didDeselectRowAt: indexPath)
     }
 
     // MARK: - Navigation
